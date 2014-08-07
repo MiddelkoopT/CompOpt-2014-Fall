@@ -1,7 +1,7 @@
 CompOpt-2014-Fall
 =================
 
-Computational Optimization (IMSE 8000-01) Fall 2014
+Computational Optimization (IMSE 8001-01) Fall 2014
 
 ## Resources ##
 
