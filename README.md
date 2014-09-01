@@ -51,6 +51,7 @@ Project Assignment:
 ### Week 4 (TDD/Software Development/Python)
  * Test Driven Development (TDD)
    * "Test Driven Development: By Example," by Kent Beck, 2002. http://www.amazon.com/dp/0321146530
+   * (pending) "Test-Driven Development with Python," by Harry Percival, 2014. http://chimera.labs.oreilly.com/books/1234000000754
    * http://www.agiledata.org/essays/tdd.html
 
 ## Resources/Notes ##
