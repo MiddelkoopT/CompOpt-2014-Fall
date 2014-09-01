@@ -35,8 +35,7 @@ Homework (Due 9/10 before class):
 
 ### Week 3 (Project and source management) ###
 Github and project workflows.
- * Iteractive tutorials: https://www.codeschool.com/courses/try-git https://www.codeschool.com/courses/git-real
- * Advanced/Optional: https://www.codeschool.com/courses/git-real-2 https://www.codeschool.com/courses/mastering-github
+ * Iteractive tutorial: https://www.codeschool.com/courses/try-git
 Git references:
  * Github docs: http://git-scm.com/doc
 
