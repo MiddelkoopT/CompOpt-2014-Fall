@@ -5,10 +5,8 @@ Computational Optimization (IMSE 8001-01) Fall 2014
 
 ## Lectures ##
 
-### Week 1-2 (R and Python) ###
-For Monday's class
- * Identify your problem and be prepared to discuss in class
- * Identify your data source: generated? benchmark problems? actual data?
+### Week 1 (R) ###
+The basics
  * Install basic software (windows 64 bit links)
    * Python (64 bit): https://www.python.org/ftp/python/3.4.1/python-3.4.1.amd64.msi
    * R: http://cran.r-project.org/bin/windows/base/R-3.1.1-win.exe
@@ -22,9 +20,34 @@ For Monday's class
    * R Markdown: http://rmarkdown.rstudio.com/
    * Offical introduction: http://cran.r-project.org/doc/manuals/R-intro.html
    * Advanced tutorials: http://www.r-tutor.com/
- * Start looking at programming in Python
-   * Read tutorial: https://docs.python.org/3/tutorial/
-   * Start programming: Read/write/generate your sample data in Python.
+
+Homework (Due 9/3 before class):
+ * Complete R "interactive tutorials", chose which one to complete first at random.  Comlete the "Basic tutorial."  Write a comparison of all three methods and which one worked the best for your learning style and why. When you comlete the interactive tutorials what does each show? Do you get a certificate?  This is Assignment A1_RTutorial on the blackboard system.
+
+### Week 2 (Python) ###
+Learn the basics of Python:
+ * Interactive tutorials: https://groklearning.com/learn/hoc-epidemic/intro/0/ http://www.codecademy.com/en/tracks/python
+ * Read tutorial: https://docs.python.org/3/tutorial/
+
+Homework (Due 9/10 before class):
+ * Complete the interactive python tutorials Grok Learning "HOC: Disease Epidemic" and codecademy Python. Which one worked for you?  How did this compare to the R tutorials.  Did you use something else (the python.org tutorial)? If so please elaborate. Did you comlete the entire tutorial to complete the second homework or just portions.  Submit to A2_BasicPython.
+ * Write a program to read a csv file with two columns (x1 and x2) and write a csv with the following columns: x1, x2, x1+x2, x2-x1. Import the data into R and plot x1 v.s. x2.  Submit to A3_PythonCSV
+
+### Week 3 (Project and source management) ###
+Github and project workflows.
+ * Iteractive tutorials: https://www.codeschool.com/courses/try-git https://www.codeschool.com/courses/git-real
+ * Advanced/Optional: https://www.codeschool.com/courses/git-real-2 https://www.codeschool.com/courses/mastering-github
+Git references:
+ * Github docs: http://git-scm.com/doc
+
+Project work:
+ * Identify your problem and be prepared to discuss in class
+ * Identify your data source: generated? benchmark problems? actual data?
+
+Project Assignment:
+ * Create a github account and repository for your project.  Email repository URL to instructor.
+ * Start programming in Python, begin prgramming your data interfaces: Read/write/generate your sample data in Python.
+
 
 ## Resources ##
 
