@@ -48,12 +48,12 @@ Project Assignment:
  * Create a github account and repository for your project.  Email repository URL to instructor.
  * Start programming in Python, begin prgramming your data interfaces: Read/write/generate your sample data in Python.
 
+### Week 4 (TDD/Software Development/Python)
+ * Test Driven Development (TDD)
+   * "Test Driven Development: By Example," by Kent Beck, 2002. http://www.amazon.com/dp/0321146530
+   * http://www.agiledata.org/essays/tdd.html
 
-## Resources ##
-
-### Test Driven Development/Design ###
- * "Test Driven Development: By Example," by Kent Beck, 2002. http://www.amazon.com/dp/0321146530
- * http://www.agiledata.org/essays/tdd.html
+## Resources/Notes ##
 
 ### Git Workflow
  * https://www.atlassian.com/git/workflows#!workflow-forking
