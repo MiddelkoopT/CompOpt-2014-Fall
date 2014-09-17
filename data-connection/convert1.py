@@ -7,6 +7,7 @@ w=open('dataset1-convert.csv','w')
 
 header=f.readline()[:-1]
 assert "x1,x2" == header
+w.write("x1,x2,x1px2,x1mx2\n")
 
 for l in f:
     l=l[:-1]
