@@ -3,11 +3,9 @@
 
 print("convert1>")
 f=open('dataset1.csv')
-w=open('dataset2-convert.csv','w')
+w=open('dataset1-convert.csv','w')
 
-header=f.readline()
-#print(header)
-header=header[:-1]
+header=f.readline()[:-1]
 assert "x1,x2" == header
 
 for l in f:
