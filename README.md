@@ -30,8 +30,8 @@ Learn the basics of Python:
  * Read tutorial: https://docs.python.org/3/tutorial/
 
 Homework (Due 9/10 before class):
- * Complete the interactive python tutorials Grok Learning "HOC: Disease Epidemic" and codecademy Python. Which one worked for you?  How did this compare to the R tutorials.  Did you use something else (the python.org tutorial)? If so please elaborate. Did you comlete the entire tutorial to complete the second homework or just portions.  Submit to A2_BasicPython.
- * Write a program to read a csv file with two columns (x1 and x2) and write a csv with the following columns: x1, x2, x1+x2, x2-x1. Import the data into R and plot x1 v.s. x2.  Submit to A3_PythonCSV
+ * Complete the interactive python tutorials Grok Learning "HOC: Disease Epidemic" and codecademy Python. Which one worked for you?  How did this compare to the R tutorials.  Did you use something else (the python.org tutorial)? If so please elaborate. Did you comlete the entire tutorial to complete the second homework or just portions.  Email your submission as A2_BasicPython.
+ * Write a program to read a csv file with two columns (x1 and x2) and write a csv with the following columns: x1, x2, x1+x2, x2-x1. Import the data into R and plot x1 v.s. x2.  Email your submission with the subject A3_PythonCSV
 
 ### Week 3 (Project and source management) ###
 Github and project workflows.
