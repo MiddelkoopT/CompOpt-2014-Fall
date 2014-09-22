@@ -1,6 +1,8 @@
 #/usr/bin/python3
 # Python and TDD Examples Copyright 2014 by Timothy Middelkoop CC by SA
 
+from TDDUtils import *
+
 print("TDD.py>")
 
 assert True==True
@@ -47,13 +49,6 @@ assert c.b==3
 
 assert 5==c.addInt()
 assert -1==c.subInt()
-
-## New assertion tools
-def assertEquals(expected,returned,message=None):
-    if not expected==returned:
-        if message:
-            print("assertEquals Failed: |%s| |%s| %s" % (expected,returned,message))
-        assert expected==returned
 
 failed=False
 try:
