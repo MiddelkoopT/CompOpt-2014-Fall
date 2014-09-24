@@ -53,6 +53,13 @@ Project Assignment:
    * Web-based TDD/git (optional): "Test-Driven Development with Python," by Harry Percival, 2014. http://chimera.labs.oreilly.com/books/1234000000754
    * http://www.agiledata.org/essays/tdd.html
 
+### Week 5 (TDD/Project)
+ * TDD and Refactoring.
+ * Data structures in Python.
+
+Project Assignment:
+  * Use develop/refactor a class and module to import data into Python and use TDD to give some basic statistics about the dataset (number of lines imported, nodes, arcs, etc) and other structural information about the data. Due Wed Oct 1st.
+
 ## Resources/Notes ##
 
 ### Git Workflow
