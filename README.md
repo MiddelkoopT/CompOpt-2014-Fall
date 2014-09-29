@@ -13,6 +13,7 @@ The basics
    * R Studio: http://download1.rstudio.org/RStudio-0.98.1028.exe
    * GitHub for windows: https://github-windows.s3.amazonaws.com/GitHubSetup.exe
    * Notepad++ (optional): http://download.tuxfamily.org/notepadplus/6.6.8/npp.6.6.8.Installer.exe
+   * SQLite: http://www.sqlite.org/2014/sqlite-shell-win32-x86-3080600.zip
  * Learn the basics of R:
    * Intractive tutorials: http://tryr.codeschool.com/ https://www.datacamp.com/courses/introduction-to-r
    * Basic tutorial: http://cyclismo.org/tutorial/R/
@@ -55,10 +56,26 @@ Project Assignment:
 
 ### Week 5 (TDD/Project)
  * TDD and Refactoring.
- * Data structures in Python.
+ * Data structures/Classes in Python.
 
 Project Assignment:
   * Use develop/refactor a class and module to import data into Python and use TDD to give some basic statistics about the dataset (number of lines imported, nodes, arcs, etc) and other structural information about the data. Due Wed Oct 1st.
+
+### Week 6 (Data, Databases, and Data Flow)
+ * SQLite databases (http://www.sqlite.org/)
+   * Download and install to C:\Programs\SQLite: http://www.sqlite.org/2014/sqlite-shell-win32-x86-3080600.zip
+ * SQLite in Python (https://docs.python.org/3/library/sqlite3.html)
+ * SQLite in R (http://cran.r-project.org/web/packages/RSQLite/index.html)
+ * Hashing in Python (https://docs.python.org/3/library/hashlib.html)
+ * Problem data strctures
+ * Database Design (http://www.tomjewett.com/dbdesign/)
+
+Homework Assignment:
+ * Repeate the CSV assignment with R and Python but using SQLite. Due Monday October 6th before class.
+
+Project Assignment:
+ * Determine the results of a your project and create a database to store them in. Due Wednesday October 8th before class.
+ * Generate a hash of a solution. Due Wednesday October 8th before class.
 
 ## Resources/Notes ##
 
