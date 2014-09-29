@@ -71,6 +71,9 @@ Project Assignment:
  * Database Design (http://www.tomjewett.com/dbdesign/)
  * Portable Apps (http://portableapps.com/download)
 
+### Week 7 (Orcastration)
+ * Configparser: https://docs.python.org/3/library/configparser.html
+
 Homework Assignment:
  * Repeate the CSV assignment with R and Python but using SQLite. Due Monday October 6th before class.
 
