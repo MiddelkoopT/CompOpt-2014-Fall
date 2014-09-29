@@ -27,7 +27,7 @@ Homework (Due 9/3 before class):
 
 ### Week 2 (Python) ###
 Learn the basics of Python:
- * Interactive tutorials: https://groklearning.com/learn/hoc-epidemic/intro/0/ http://www.codecademy.com/en/tracks/python
+ * Interactive tutorials: https://groklearning.com/learn/hoc-epidemic/intro/0/ http://www.codecademy.com/en/tracks/python http://pythontutor.com
  * Read tutorial: https://docs.python.org/3/tutorial/
 
 Homework (Due 9/10 before class):
