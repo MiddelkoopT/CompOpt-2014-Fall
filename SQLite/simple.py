@@ -34,7 +34,7 @@ class Database:
 def test():
     db=Database()
     assertTrue(db.put('one',1),"Add first entry")
-    assertEquals('1',db.get('one'),"Verify write")
+    assertEquals(1,db.get('one'),"Verify write")
     assertTrue(db.put('two',2),"Add second entry")
     db.close()
 
