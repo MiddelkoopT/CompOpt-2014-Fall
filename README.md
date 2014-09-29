@@ -69,6 +69,7 @@ Project Assignment:
  * Hashing in Python (https://docs.python.org/3/library/hashlib.html)
  * Problem data strctures
  * Database Design (http://www.tomjewett.com/dbdesign/)
+ * Portable Apps (http://portableapps.com/download)
 
 Homework Assignment:
  * Repeate the CSV assignment with R and Python but using SQLite. Due Monday October 6th before class.
