@@ -4,6 +4,8 @@
 
 import sqlite3
 import os
+import configparser
+
 from TDDUtils import *
 
 class Database:
@@ -31,12 +33,28 @@ class Database:
         self.con.commit()
         self.con.close()
 
+class Config:
+    def __init__(self):
+        self.config=configparser.ConfigParser()
+        self.config.read('simple.ini')
+        
+    def __getitem__(self,index):
+        return self.config['Simple'][index]
+
+    def __getattr__(self,index):
+        return self[index]
+        
 def test():
     db=Database()
     assertTrue(db.put('one',1),"Add first entry")
     assertEquals(1,db.get('one'),"Verify write")
     assertTrue(db.put('two',2),"Add second entry")
     db.close()
+
+    config=Config()
+    assertEquals('simple.db',config['database'])
+    assertEquals('simple.db',config.database)
+   
 
 if __name__=='__main__':
     print("simple.py>")
