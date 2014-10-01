@@ -5,6 +5,7 @@
 import sqlite3
 import os
 import configparser
+import platform
 
 from TDDUtils import *
 
@@ -52,9 +53,10 @@ def test():
     db.close()
 
     config=Config()
+    hostname=platform.uname()[1]
+    print(hostname)
     assertEquals('simple.db',config['database'])
     assertEquals('simple.db',config.database)
-   
 
 if __name__=='__main__':
     print("simple.py>")
