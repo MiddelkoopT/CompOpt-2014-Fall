@@ -36,15 +36,24 @@ class Database:
 
 class Config:
     def __init__(self):
+        hostname=platform.uname()[1]
+        print("config>%s" % (hostname,))
         self.config=configparser.ConfigParser()
-        self.config.read('simple.ini')
+        self.config.read(['simple.ini',"config/%s.ini" % (hostname,)])
         
     def __getitem__(self,index):
-        return self.config['Simple'][index]
+        value=self.config['Simple'][index]
+        if value=='':
+            return None
+        elif value in ('True','true'):
+            return True
+        elif value in ('False','false'):
+            return False
+        return value
 
     def __getattr__(self,index):
         return self[index]
-        
+       
 def test():
     db=Database()
     assertTrue(db.put('one',1),"Add first entry")
@@ -54,9 +63,10 @@ def test():
 
     config=Config()
     hostname=platform.uname()[1]
-    print(hostname)
     assertEquals('simple.db',config['database'])
     assertEquals('simple.db',config.database)
+    assertTrue(config.local,"config/hostname.ini test)")
+
 
 if __name__=='__main__':
     print("simple.py>")
