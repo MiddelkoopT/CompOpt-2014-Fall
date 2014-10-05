@@ -1,5 +1,7 @@
 # Simple RSQlite.
 
+print("simple.R>")
+
 # install.packages("RSQLite")
 # setwd("~/GitHub/CompOpt-2014-Fall/SQLite")
 

@@ -4,6 +4,7 @@
 
 import sqlite3
 import os
+import subprocess
 import configparser
 import platform
 
@@ -53,7 +54,7 @@ class Config:
 
     def __getattr__(self,index):
         return self[index]
-       
+
 def test():
     db=Database()
     assertTrue(db.put('one',1),"Add first entry")
@@ -67,6 +68,21 @@ def test():
     assertEquals('simple.db',config.database)
     assertTrue(config.local,"config/hostname.ini test)")
 
+    ## Fix envrionment (IDLE Mangles these some how when passing to R!)
+    userprofile=os.environ['USERPROFILE']
+    os.environ['R_LIBS_USER']="%s/Documents/R/win-library/3.1" % userprofile
+    
+    ## Orchastration
+    try:
+        output=subprocess.check_output([config.R,'--vanilla','simple.R'],
+                                       universal_newlines=True,stderr=subprocess.STDOUT)
+        output=output.split("\n")
+    except subprocess.CalledProcessError as e:
+        print("R Subprocess failed: exitcode %d" % (e.returncode,))
+        print(e.output)
+        return False
+    print(output)
+    assertEquals('[1] "simple.R>"',output[0],'Script execution')
 
 if __name__=='__main__':
     print("simple.py>")
