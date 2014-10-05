@@ -14,6 +14,7 @@ The basics
    * GitHub for windows: https://github-windows.s3.amazonaws.com/GitHubSetup.exe
    * Notepad++ (optional): http://download.tuxfamily.org/notepadplus/6.6.8/npp.6.6.8.Installer.exe
    * SQLite: http://www.sqlite.org/2014/sqlite-shell-win32-x86-3080600.zip
+   * Gurobi: http://www.gurobi.com/download/gurobi-optimizer
  * Learn the basics of R:
    * Intractive tutorials: http://tryr.codeschool.com/ https://www.datacamp.com/courses/introduction-to-r
    * Basic tutorial: http://cyclismo.org/tutorial/R/
@@ -71,11 +72,15 @@ Project Assignment:
  * Database Design (http://www.tomjewett.com/dbdesign/)
  * Portable Apps (http://portableapps.com/download)
 
-### Week 7 (Orcastration)
+### Week 7 (Orcastration, Optimization)
  * Configparser: https://docs.python.org/3/library/configparser.html
+ * Gurobi: http://www.gurobi.com/download/gurobi-optimizer
 
 Homework Assignment:
  * Repeate the CSV assignment with R and Python but using SQLite. Due Monday October 6th before class.
+ * Download and install Gurobi.  
+ * Solve the following problem in Gurobi. Due Wednesday October 8th before class.
+   * max x1 + 2x2 s.t. x1 + x2 <= 40, 2x1 + x2 <= 60 ; x1,x2 >=0 
 
 Project Assignment:
  * Determine the results of a your project and create a database to store them in. Due Wednesday October 8th before class.
