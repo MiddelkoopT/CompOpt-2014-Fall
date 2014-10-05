@@ -14,7 +14,6 @@ The basics
    * GitHub for windows: https://github-windows.s3.amazonaws.com/GitHubSetup.exe
    * Notepad++ (optional): http://download.tuxfamily.org/notepadplus/6.6.8/npp.6.6.8.Installer.exe
    * SQLite: http://www.sqlite.org/2014/sqlite-shell-win32-x86-3080600.zip
-   * Gurobi: http://www.gurobi.com/download/gurobi-optimizer
  * Learn the basics of R:
    * Intractive tutorials: http://tryr.codeschool.com/ https://www.datacamp.com/courses/introduction-to-r
    * Basic tutorial: http://cyclismo.org/tutorial/R/
@@ -75,6 +74,7 @@ Project Assignment:
 ### Week 7 (Orcastration, Optimization)
  * Configparser: https://docs.python.org/3/library/configparser.html
  * Gurobi: http://www.gurobi.com/download/gurobi-optimizer
+ * Install Python 3.2 for Gurobi: https://www.python.org/ftp/python/3.2.5/python-3.2.5.amd64.msi
 
 Homework Assignment:
  * Repeate the CSV assignment with R and Python but using SQLite. Due Monday October 6th before class.
