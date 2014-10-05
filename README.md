@@ -75,6 +75,11 @@ Project Assignment:
  * Configparser: https://docs.python.org/3/library/configparser.html
  * Gurobi: http://www.gurobi.com/download/gurobi-optimizer
  * Install Python 3.2 for Gurobi: https://www.python.org/ftp/python/3.2.5/python-3.2.5.amd64.msi
+ * Install Gurobi module for Python.
+```BatchFile
+C:\>cd c:\gurobi563\win64
+C:\gurobi563\win64>\Python32\python.exe setup.py install
+```
 
 Homework Assignment:
  * Repeate the CSV assignment with R and Python but using SQLite. Due Monday October 6th before class.
