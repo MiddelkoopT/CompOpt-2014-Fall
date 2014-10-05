@@ -1,5 +1,17 @@
 #!/usr/bin/python3
 
+"""
+Maximize
+  1 x1 + 2 x2
+Subject To
+  C1: x1 + x2 <= 40
+  Nickel: 2 x1 + 1 x2 <= 60
+Bounds
+  x1 >= 0
+  x2 >= 0
+End
+"""
+
 from gurobipy import * 
 
 m = Model("simple")
@@ -18,5 +30,4 @@ m.optimize()
 print("Solution: %f" % (m.objVal,))
 for v in m.getVars():
     print("%s:%f" % (v.varName, v.x))
-
 
