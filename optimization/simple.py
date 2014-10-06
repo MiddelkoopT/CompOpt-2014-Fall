@@ -21,7 +21,16 @@ m.update()
 
 print("x1:%s x2:%s" % (x1,x2))
 
-m.setObjective(x1 + 2*x2, GRB.MAXIMIZE)
+#m.setObjective(x1 + 2*x2, GRB.MAXIMIZE)
+coef=[1,2]
+var=[x1,x2]
+
+s=[]
+for c,v in zip(coef,var):
+    print(c,v)
+    s.append(c*v)
+m.setObjective(sum(s),GRB.MAXIMIZE)
+
 m.addConstr(x1 + x2 <= 40, "C1")
 m.addConstr(2*x1 + x2 <= 60, "C2")
 
