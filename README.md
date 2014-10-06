@@ -91,6 +91,10 @@ Project Assignment:
  * Determine the results of a your project and create a database to store them in. Due Wednesday October 8th before class.
  * Generate a hash of a solution. Due Wednesday October 8th before class.
 
+### Week 8 (Workflow tools)
+ * Pegasus workflow: http://pegasus.isi.edu/
+ * Pegasus example: https://github.com/pegasus-isi/Soybean-Workflow
+
 ## Resources/Notes ##
 
 ### Git Workflow
