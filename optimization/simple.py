@@ -22,13 +22,31 @@ m.update()
 print("x1:%s x2:%s" % (x1,x2))
 
 #m.setObjective(x1 + 2*x2, GRB.MAXIMIZE)
-coef=[1,2]
-var=[x1,x2]
+
+class Power:
+    def __init__(self):
+        self.coef=None
+        self.var =None
+        
+    def __repr__(self):
+        return "<%s %s>" % (self.coef,self.var)
+
+p1=Power()
+p2=Power()
+print(p1)
+p1.coef=1
+p2.coef=2
+p1.var=x1
+p2.var=x2
+
+p=[p1,p2]
+
+print(p)
 
 s=[]
-for c,v in zip(coef,var):
-    print(c,v)
-    s.append(c*v)
+for i in p:
+    print(i.coef,i.var)
+    s.append(i.coef*i.var)
 m.setObjective(sum(s),GRB.MAXIMIZE)
 
 m.addConstr(x1 + x2 <= 40, "C1")
