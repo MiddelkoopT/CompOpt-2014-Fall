@@ -1,6 +1,7 @@
 # Simple RSQlite.
 
-print("simple.R>")
+## TDD start script
+print("simple.R>");
 
 # install.packages("RSQLite")
 # setwd("~/GitHub/CompOpt-2014-Fall/SQLite")
@@ -19,3 +20,6 @@ sum(d$value)
 # close
 sqliteCloseConnection(db)
 sqliteCloseDriver(drv)
+
+## TDD End script
+print('simple.R> done');

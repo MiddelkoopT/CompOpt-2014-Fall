@@ -55,6 +55,36 @@ class Config:
     def __getattr__(self,index):
         return self[index]
 
+class R:
+    def __init__(self,config):
+        ## Fix envrionment (IDLE Mangles these some how when passing to R!)
+        userprofile=os.environ['USERPROFILE']
+        if config.r_libs_user[0]!='/' and config.r_libs_user[1]==':':
+            assert False ## Untested code
+            self.libs=config.r_libs_user
+        else:
+            self.libs="%s/%s" % (userprofile,config.r_libs_user)
+            self.exec=config.R
+        self.args=['--vanilla']
+
+    def run(self,script):
+        ## Build args every time in case config gets changed.
+        args=[self.exec]
+        args.extend(self.args)
+        args.append(script)
+
+        ## must set env directly, not pass it for some reason (IDLE Workaround)
+        os.environ['R_LIBS_USER']=self.libs
+        try:
+            output=subprocess.check_output(args,universal_newlines=True,stderr=subprocess.STDOUT)
+            self.output=output.split("\n")
+            return self.output
+        except subprocess.CalledProcessError as e:
+            print("R Subprocess failed: exitcode %d" % (e.returncode,))
+            print("libs: %s" % self.libs)
+            print(e.output)
+            raise e
+
 def test():
     db=Database()
     assertTrue(db.put('one',1),"Add first entry")
@@ -68,21 +98,12 @@ def test():
     assertEquals('simple.db',config.database)
     assertTrue(config.local,"config/hostname.ini test)")
 
-    ## Fix envrionment (IDLE Mangles these some how when passing to R!)
-    userprofile=os.environ['USERPROFILE']
-    os.environ['R_LIBS_USER']="%s/Documents/R/win-library/3.1" % userprofile
-    
     ## Orchastration
-    try:
-        output=subprocess.check_output([config.R,'--vanilla','simple.R'],
-                                       universal_newlines=True,stderr=subprocess.STDOUT)
-        output=output.split("\n")
-    except subprocess.CalledProcessError as e:
-        print("R Subprocess failed: exitcode %d" % (e.returncode,))
-        print(e.output)
-        return False
-    print(output)
+    r=R(config)
+    output=r.run('simple.R')
+    #print(output)
     assertEquals('[1] "simple.R>"',output[0],'Script execution')
+    assertEquals('[1] "simple.R> done"',output[-2],'Script execution done')
 
 if __name__=='__main__':
     print("simple.py>")
