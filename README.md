@@ -82,18 +82,23 @@ C:\gurobi563\win64>\Python32\python.exe setup.py install
 ```
 
 Homework Assignment:
- * Repeate the CSV assignment with R and Python but using SQLite. Due Monday October 6th before class.
  * Download and install Gurobi.  
- * Solve the following problem in Gurobi. Due Wednesday October 8th before class.
-   * max x1 + 2x2 s.t. x1 + x2 <= 40, 2x1 + x2 <= 60 ; x1,x2 >=0 
-
-Project Assignment:
- * Determine the results of a your project and create a database to store them in. Due Wednesday October 8th before class.
- * Generate a hash of a solution. Due Wednesday October 8th before class.
 
 ### Week 8 (Workflow tools)
  * Pegasus workflow: http://pegasus.isi.edu/
  * Pegasus example: https://github.com/pegasus-isi/Soybean-Workflow
+
+Homework Assignment:
+ * Repeate the CSV assignment with R and Python but using SQLite. Due Monday October 13th before class.
+ * Solve the following problem in Gurobi using Python. Due Wednesday October 15th before class.
+   * max x1 + 2x2 s.t. x1 + x2 <= 40, 2x1 + x2 <= 60 ; x1,x2 >=0 
+
+### Week 9
+
+Project Assignment:
+ * Determine the results of a your project and create a database to store them in.
+ * Generate a hash of a solution.
+
 
 ## Resources/Notes ##
 
