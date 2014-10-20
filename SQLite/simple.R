@@ -15,11 +15,15 @@ d <- dbGetQuery(db,"SELECT key,value FROM Data")
 
 d
 
-sum(d$value)
-mean(d$value)
-sd(d$value)
+rs <- sum(d$value)
+rm <- mean(d$value)
+rsd <- sd(d$value)
 
+sql <- "INSERT INTO Results (experiment,result,value) VALUES (:e,:r,:v)"
+dbGetPreparedQuery(db,sql,data.frame(e='all',r='sum',v=rs))
 
+r <- dbGetQuery(db,"SELECT experiment,result,value FROM Results")
+r
 
 ## Close
 sqliteCloseConnection(db)
