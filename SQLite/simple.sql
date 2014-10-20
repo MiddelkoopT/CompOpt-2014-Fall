@@ -2,6 +2,6 @@
 
 CREATE TABLE Data (
   key TEXT PRIMARY KEY,
-  value TEXT
+  value INTEGER
 );
 

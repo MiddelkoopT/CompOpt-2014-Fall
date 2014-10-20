@@ -6,7 +6,7 @@ import sqlite3
 import os
 from TDDUtils import *
 
-class Phonebook:
+class Data:
     def __init__(self,database='simple.db',keep=False):
 
         if keep:
@@ -29,15 +29,15 @@ class Phonebook:
         self.con.commit()
         self.con.close()
 
-    def add(self,name,number):
+    def add(self,key,value):
         statement='INSERT INTO Data (key,value) VALUES (?,?)'
-        cur=self.con.execute(statement,(name,number))
+        cur=self.con.execute(statement,(key,value))
         cur.close()
         return True
 
-    def get(self,name):
+    def get(self,key):
         statement='SELECT value FROM Data WHERE key=?'
-        cur=self.con.execute(statement,(name,))
+        cur=self.con.execute(statement,(key,))
         data=cur.fetchone()
         if data is None:
             return None
@@ -49,13 +49,14 @@ if __name__=='__main__':
     print("simple.py")
     assertTrue(True)
 
-    db=Phonebook()
-    assertTrue(db.add('Bob','5551212'))
-    assertEquals('5551212',db.get('Bob'))
-    assertEquals(None,db.get('Andy'))
+    db=Data()
+    assertTrue(db.add('one',1))
+    assertEquals(1,db.get('one'),"Test get")
+    assertTrue(db.add('two',2))
+    assertEquals(None,db.get('three'))
     db.close()
 
-    db=Phonebook(keep=True)
-    assertEquals('5551212',db.get('Bob'))
+    db=Data(keep=True)
+    assertEquals(2,db.get('two'))
     db.close()    
     
