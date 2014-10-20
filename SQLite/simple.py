@@ -22,7 +22,7 @@ class Data:
 
         schema=open('simple.sql').read()
         #print(schema)
-        cur=self.con.execute(schema)
+        cur=self.con.executescript(schema)
         cur.close()
 
     def close(self):

@@ -16,5 +16,13 @@ d <- dbGetQuery(db,"SELECT key,value FROM Data")
 d
 
 sum(d$value)
+mean(d$value)
+sd(d$value)
+
+
+
+## Close
+sqliteCloseConnection(db)
+sqliteCloseDriver(drv)
 
 print("simple.R> Done")

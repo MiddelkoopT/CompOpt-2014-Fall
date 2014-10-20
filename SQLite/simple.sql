@@ -5,3 +5,9 @@ CREATE TABLE Data (
   value INTEGER
 );
 
+CREATE TABLE Results (
+   experiment TEXT,
+   result TEXT,
+   value DOUBLE
+ );
+ 
