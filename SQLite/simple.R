@@ -1,0 +1,20 @@
+# Simple RSQlite
+
+# install.packages("RSQLite")
+setwd("~/GitHub/CompOpt-2014-Fall/SQLite")
+
+print("simple.R>")
+
+library(DBI)
+library(RSQLite)
+
+drv <- dbDriver("SQLite")
+db <- dbConnect(drv, dbname="simple.db")
+
+d <- dbGetQuery(db,"SELECT key,value FROM Data")
+
+d
+
+sum(d$value)
+
+print("simple.R> Done")
