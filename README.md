@@ -94,11 +94,15 @@ Homework Assignment:
    * max x1 + 2x2 s.t. x1 + x2 <= 40, 2x1 + x2 <= 60 ; x1,x2 >=0 
 
 ### Week 9
-
+ * SQLite and experiment and results databases
+   * https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.3.1/sqlitebrowser-3.3.1-win32.exe
 Project Assignment:
  * Determine the results of a your project and create a database to store them in.
  * Generate a hash of a solution.
 
+
+### Week 12
+ * Latex and TexMaker: http://www.xm1math.net/texmaker/texmakerwin32_install.exe 
 
 ## Resources/Notes ##
 
