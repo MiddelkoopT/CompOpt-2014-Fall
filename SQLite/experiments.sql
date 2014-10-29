@@ -19,3 +19,5 @@ CREATE TABLE Runs (
 );
 
 INSERT INTO Runs (EID,RUNID) VALUES (1,1),(1,2),(1,3),(2,4),(2,5),(2,6);
+
+SELECT * FROM Experiments JOIN Runs USING (EID);
