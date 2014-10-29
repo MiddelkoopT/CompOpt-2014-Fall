@@ -102,7 +102,9 @@ Project Assignment:
 
 
 ### Week 12
- * Latex and TexMaker: http://www.xm1math.net/texmaker/texmakerwin32_install.exe 
+ * Latex (http://miktex.org/) and TexMaker (http://xm1math.net/texmaker)
+   * http://www.xm1math.net/texmaker/texmakerwin32_install.exe 
+   * http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.5105.exe
 
 ## Resources/Notes ##
 
