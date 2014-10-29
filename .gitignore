@@ -4,3 +4,4 @@ SQLite/.Rhistory
 *.log
 *.db
 *.db
+*.sqlite
