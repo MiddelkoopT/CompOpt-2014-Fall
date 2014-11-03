@@ -100,8 +100,7 @@ Project Assignment:
  * Determine the results of a your project and create a database to store them in.
  * Generate a hash of a solution.
 
-
-### Week 12
+### Week 10
  * Latex (http://miktex.org/) and TexMaker (http://xm1math.net/texmaker)
    * http://www.xm1math.net/texmaker/texmakerwin32_install.exe 
    * http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.5105.exe
