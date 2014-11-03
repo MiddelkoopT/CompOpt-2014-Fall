@@ -148,7 +148,7 @@ INSERT INTO `Runs` VALUES ('145','145','2009-12-05 11:23:43','2009-12-05 11:54:5
 INSERT INTO `Runs` VALUES ('146','146','2009-12-05 11:54:51','2009-12-05 12:24:50');
 INSERT INTO `Runs` VALUES ('147','147','2009-12-05 12:24:51','2009-12-05 12:55:02');
 CREATE TABLE Results (
-       eid INTEGER,
+       run INTEGER,
        iterations REAL,
        steps REAL,
        loops REAL,
