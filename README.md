@@ -106,7 +106,9 @@ Project Assignment:
    * http://mirrors.ctan.org/systems/win32/miktex/setup/basic-miktex-2.9.5105.exe
 
 ### Week 11
- * Heuristic Search, A*: http://www.redblobgames.com/pathfinding/a-star/introduction.html
+ * Heuristic Search, A*
+   * http://theory.stanford.edu/~amitp/GameProgramming/index.html
+   * http://www.redblobgames.com/pathfinding/a-star/introduction.html
 
 ## Resources/Notes ##
 
