@@ -1,4 +1,6 @@
 data-connection/.Rhistory
+SQLite/.Rhistory
 *.pyc
 *.db
 *.log
+*.sqlite

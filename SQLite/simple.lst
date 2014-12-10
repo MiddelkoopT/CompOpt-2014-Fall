@@ -1,0 +1,208 @@
+GAMS 24.3.3  r48116 Released Sep 19, 2014 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 12/10/14 16:50:04 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  SETS
+   2         I   canning plants   / SEATTLE, SAN-DIEGO /
+   3         J   markets          / NEW-YORK, CHICAGO, TOPEKA / ;
+   4    PARAMETERS
+   5         A(I)  capacity of plant i in cases
+   6           /    SEATTLE     350
+   7                SAN-DIEGO   600  /
+   8         B(J)  demand at market j in cases
+   9           /    NEW-YORK    325
+  10                CHICAGO     300
+  11                TOPEKA      275  / ;
+  12    TABLE D(I,J)  distance in thousands of miles
+  13                      NEW-YORK       CHICAGO      TOPEKA
+  14        SEATTLE          2.5           1.7          1.8
+  15        SAN-DIEGO        2.5           1.8          1.4  ;
+  16    SCALAR F  freight in dollars per case per thousand miles  /90/ ;
+  17    PARAMETER C(I,J)  transport cost in thousands of dollars per case ;
+  18              C(I,J) = F * D(I,J) / 1000 ;
+  19    VARIABLES
+  20         X(I,J)  shipment quantities in cases
+  21         Z       total transportation costs in thousands of dollars ;
+  22    POSITIVE VARIABLE X ;
+  23    EQUATIONS
+  24         COST        define objective function
+  25         SUPPLY(I)   observe supply limit at plant i
+  26         DEMAND(J)   satisfy demand at market j ;
+  27    COST ..        Z  =E=  SUM((I,J), C(I,J)*X(I,J)) ;
+  28    SUPPLY(I) ..   SUM(J, X(I,J))  =L=  A(I) ;
+  29    DEMAND(J) ..   SUM(I, X(I,J))  =G=  B(J) ;
+  30    MODEL TRANSPORT /ALL/ ;
+  31    SOLVE TRANSPORT USING LP MINIMIZING Z ;
+  32   
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  24.3.3 r48116 WEX-WEI
+GAMS 24.3.3  r48116 Released Sep 19, 2014 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 12/10/14 16:50:04 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE TRANSPORT Using LP From line 31
+
+
+---- COST  =E=  define objective function
+
+COST..  - 0.225*X(SEATTLE,NEW-YORK) - 0.153*X(SEATTLE,CHICAGO) - 0.162*X(SEATTLE,TOPEKA) - 0.225*X(SAN-DIEGO,NEW-YORK) - 0.162*X(SAN-DIEGO,CHICAGO) - 0.126*X(SAN-DIEGO,TOPEKA) + Z =E= 0 ; (LHS = 0)
+     
+
+---- SUPPLY  =L=  observe supply limit at plant i
+
+SUPPLY(SEATTLE)..  X(SEATTLE,NEW-YORK) + X(SEATTLE,CHICAGO) + X(SEATTLE,TOPEKA) =L= 350 ; (LHS = 0)
+     
+SUPPLY(SAN-DIEGO)..  X(SAN-DIEGO,NEW-YORK) + X(SAN-DIEGO,CHICAGO) + X(SAN-DIEGO,TOPEKA) =L= 600 ; (LHS = 0)
+     
+
+---- DEMAND  =G=  satisfy demand at market j
+
+DEMAND(NEW-YORK)..  X(SEATTLE,NEW-YORK) + X(SAN-DIEGO,NEW-YORK) =G= 325 ; (LHS = 0, INFES = 325 ****)
+     
+DEMAND(CHICAGO)..  X(SEATTLE,CHICAGO) + X(SAN-DIEGO,CHICAGO) =G= 300 ; (LHS = 0, INFES = 300 ****)
+     
+DEMAND(TOPEKA)..  X(SEATTLE,TOPEKA) + X(SAN-DIEGO,TOPEKA) =G= 275 ; (LHS = 0, INFES = 275 ****)
+     
+GAMS 24.3.3  r48116 Released Sep 19, 2014 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 12/10/14 16:50:04 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE TRANSPORT Using LP From line 31
+
+
+---- X  shipment quantities in cases
+
+X(SEATTLE,NEW-YORK)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -0.225   COST
+        1       SUPPLY(SEATTLE)
+        1       DEMAND(NEW-YORK)
+
+X(SEATTLE,CHICAGO)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -0.153   COST
+        1       SUPPLY(SEATTLE)
+        1       DEMAND(CHICAGO)
+
+X(SEATTLE,TOPEKA)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -0.162   COST
+        1       SUPPLY(SEATTLE)
+        1       DEMAND(TOPEKA)
+
+REMAINING 3 ENTRIES SKIPPED
+
+---- Z  total transportation costs in thousands of dollars
+
+Z
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       COST
+
+GAMS 24.3.3  r48116 Released Sep 19, 2014 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 12/10/14 16:50:04 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE TRANSPORT Using LP From line 31
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            6
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES            7
+NON ZERO ELEMENTS            19
+
+
+GENERATION TIME      =        0.016 SECONDS      4 MB  24.3.3 r48116 WEX-WEI
+
+
+EXECUTION TIME       =        0.016 SECONDS      4 MB  24.3.3 r48116 WEX-WEI
+GAMS 24.3.3  r48116 Released Sep 19, 2014 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 12/10/14 16:50:04 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE TRANSPORT Using LP From line 31
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   TRANSPORT           OBJECTIVE  Z
+     TYPE    LP                  DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  31
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE              153.6750
+
+ RESOURCE USAGE, LIMIT          0.015      1000.000
+ ITERATION COUNT, LIMIT         4    2000000000
+
+IBM ILOG CPLEX   24.3.3 r48116 Released Sep 19, 2014 WEI x86 64bit/MS Windows 
+Cplex 12.6.0.1
+
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+LP status(1): optimal
+Cplex Time: 0.01sec (det. 0.01 ticks)
+Optimal solution found.
+Objective :         153.675000
+
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU COST                .              .              .             1.0000      
+
+  COST  define objective function
+
+---- EQU SUPPLY  observe supply limit at plant i
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+SEATTLE          -INF          350.0000       350.0000         EPS         
+SAN-DIEGO        -INF          550.0000       600.0000          .          
+
+---- EQU DEMAND  satisfy demand at market j
+
+                LOWER          LEVEL          UPPER         MARGINAL
+
+NEW-YORK       325.0000       325.0000        +INF            0.2250      
+CHICAGO        300.0000       300.0000        +INF            0.1530      
+TOPEKA         275.0000       275.0000        +INF            0.1260      
+
+---- VAR X  shipment quantities in cases
+
+                          LOWER          LEVEL          UPPER         MARGINAL
+
+SEATTLE  .NEW-YORK          .            50.0000        +INF             .          
+SEATTLE  .CHICAGO           .           300.0000        +INF             .          
+SEATTLE  .TOPEKA            .              .            +INF            0.0360      
+SAN-DIEGO.NEW-YORK          .           275.0000        +INF             .          
+GAMS 24.3.3  r48116 Released Sep 19, 2014 WEX-WEI x86 64bit/MS Windows                                                                                                                                                                 12/10/14 16:50:04 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE TRANSPORT Using LP From line 31
+
+
+     VAR X  shipment quantities in cases
+
+                          LOWER          LEVEL          UPPER         MARGINAL
+
+SAN-DIEGO.CHICAGO           .              .            +INF            0.0090      
+SAN-DIEGO.TOPEKA            .           275.0000        +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR Z                 -INF          153.6750        +INF             .          
+
+  Z  total transportation costs in thousands of dollars
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+
+
+EXECUTION TIME       =        0.016 SECONDS      2 MB  24.3.3 r48116 WEX-WEI
+
+
+USER: IMSE                                           G141120:1048AO-WIN
+      University of Missouri                                    DC10815
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\MiddelkoopT\Documents\GitHub\CompOpt-2014-Fall\SQLite\simple.gms
+Output     C:\Users\MiddelkoopT\Documents\GitHub\CompOpt-2014-Fall\SQLite\simple.lst
