@@ -5,7 +5,7 @@
 import sqlite3
 import os
 import subprocess
-import configparser
+import configparser as cp
 import platform
 
 from TDDUtils import *
@@ -37,13 +37,14 @@ class Database:
 
 class Config:
     def __init__(self):
-        hostname=platform.uname()[1]
-        print("config>%s" % (hostname,))
-        self.config=configparser.ConfigParser()
-        self.config.read(['simple.ini',"config/%s.ini" % (hostname,)])
+        self.hostname=platform.uname()[1]
+        print("config>%s" % (self.hostname,))
+        self.config=cp.ConfigParser()
+        self.config.read(['config.ini','local.ini',"config/%s.ini" % (self.hostname,)])
+        self.section='Global'
         
-    def __getitem__(self,index):
-        value=self.config['Simple'][index]
+    def __getitem__(self,option):
+        value=self.config.get(self.section,option)
         if value=='':
             return None
         elif value in ('True','true'):
@@ -52,8 +53,8 @@ class Config:
             return False
         return value
 
-    def __getattr__(self,index):
-        return self[index]
+    def __getattr__(self,option):
+        return self[option]
 
 class R:
     def __init__(self,config):
@@ -85,6 +86,27 @@ class R:
             print(e.output)
             raise e
 
+class GAMS:
+    def __init__(self,config):
+        self.program=config.GAMS
+        self.args=[]
+
+    def run(self,script):
+        ## Build args every time in case config gets changed.
+        args=[self.program]
+        args.extend(self.args)
+        args.append(script)
+        print("GAMS.run> %s" % args)
+        try:
+            output=subprocess.check_output(args,universal_newlines=True,stderr=subprocess.STDOUT)
+            self.output=output.split("\n")
+            #return self.output
+            return False ## TODO: GAMS output is lost!
+        except subprocess.CalledProcessError as e:
+            print("Subprocess failed: exitcode %d (check console for error)" % (e.returncode,))
+            print(e.output)
+            raise e
+
 def test():
     db=Database()
     assertTrue(db.put('one',1),"Add first entry")
@@ -104,6 +126,10 @@ def test():
     #print(output)
     assertEquals('[1] "simple.R>"',output[0],'Script execution')
     assertEquals('[1] "simple.R> done"',output[-2],'Script execution done')
+
+    g=GAMS(config)
+    output=g.run('simple.gms')
+    print(output)
 
 if __name__=='__main__':
     print("simple.py>")
